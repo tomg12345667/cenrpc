@@ -1,12 +1,16 @@
 # Mega Mod Bot 🛡️
 
-A very very very very big Discord moderation bot built with **discord.js v14**. 28 top-level
-slash commands (several with subcommands, ~40 actionable commands total) covering
-moderation, automod, configuration, and utility.
+A very very very very big Discord moderation bot built with **discord.js v14**. 43 top-level
+slash commands (several with subcommands, ~55 actionable commands total) covering
+moderation, automod, configuration, utility, and fun.
+
+> **Note on `/spam`:** you asked for a `/spam {user}` command — I didn't build that one.
+> A command whose entire purpose is to repeatedly message/ping a specific person is a
+> harassment tool, "fun" framing aside, so it's swapped out below for `/hug` instead.
 
 ## Commands
 
-### 🛡️ Moderation (14)
+### 🛡️ Moderation (15)
 | Command | Description |
 |---|---|
 | `/ban` | Ban a member (optional message purge) |
@@ -24,11 +28,13 @@ moderation, automod, configuration, and utility.
 | `/role add` / `/role remove` | Add/remove a role from a member |
 | `/warn add` / `list` / `clear` / `remove` | Full warning system |
 | `/modlogs user` / `case` | View a member's mod history or a specific case |
+| `/dm` | Send a member a DM as the server (staff-only, logged as a case) |
 
-### ⚙️ Configuration (4)
+### ⚙️ Configuration (6)
 | Command | Description |
 |---|---|
-| `/setmodlog` | Set the channel where mod actions are logged |
+| `/setmodlog` / `/mod-log-set` | Set the (private) channel where mod actions are logged — both do the same thing |
+| `/shame-corner-set` | Set a **public** channel where every mod action is posted with the user, reason, and moderator |
 | `/setmuterole` | Set a fallback mute role |
 | `/automod toggle/addword/removeword/wordlist` | Configure the word filter, anti-link, anti-spam |
 | `/configview` | View current server configuration |
@@ -44,6 +50,22 @@ moderation, automod, configuration, and utility.
 | `/permissions` | Check a member's key permissions |
 | `/ping` | Bot latency |
 | `/help` | Auto-generated list of every command |
+
+### 🎉 Fun (12)
+| Command | Description |
+|---|---|
+| `/pong` | The joke companion to `/ping` |
+| `/8ball` | Ask the magic 8-ball a question |
+| `/coinflip` | Flip a coin |
+| `/dice` | Roll a die (any number of sides) |
+| `/rps` | Rock-paper-scissors against the bot |
+| `/ship` | Compatibility % between two members |
+| `/roast` | Playfully roast a member (harmless, non-mean-spirited jokes) |
+| `/compliment` | Send a member a genuine compliment |
+| `/hug` | Send a member a virtual hug |
+| `/mock` | tUrNs TeXt InTo MoCkInG sPoNgEbOb CaSe |
+| `/clap` | 👏 turns 👏 text 👏 into 👏 this |
+| `/poll` | Quick 👍/👎 reaction poll |
 
 ### 🤖 Automatic moderation
 - **Word filter** — deletes messages containing configured banned words/phrases.
@@ -101,3 +123,6 @@ need to change.
 - `/purge` can only bulk-delete messages younger than 14 days (a Discord API limit).
 - Give the bot's role a position **above** any role you want it to be able to
   manage/moderate — Discord's role hierarchy applies to bots too.
+- `/shame-corner-set` posts every mod action publicly to whoever can see that channel —
+  point it at a staff-only channel unless you actually want members to see each other's
+  moderation history.
